@@ -10,9 +10,9 @@ TypeScript files in the src directory are compiled to JavaScript in the dist dir
 
 ## Setup
 
-   git clone <repository_url>
-   cd <repository_directory>
-   npm install
+  * git clone <repository_url>
+  * cd <repository_directory>
+  * npm install
 
 ## Compile TypeScript to JavaScript
 
@@ -20,12 +20,11 @@ TypeScript files in the src directory are compiled to JavaScript in the dist dir
 
 ## Usage
 
-node dist/gited.js init <repo_name>
-cd <repo_name>
-echo "Hello Coding Challenges" > test.txt
-node ../dist/gited.js add test.txt
+* node dist/gited.js init <repo_name>
+* cd <repo_name>
+* echo "Hello Coding Challenges" > test.txt
+* node ../dist/gited.js add test.txt
 
-node ../dist/gited.js commit "Initial commit"
-node ../dist/gited.js status
+* node ../dist/gited.js commit "Initial commit"
+* node ../dist/gited.js status
 
-# repoName
