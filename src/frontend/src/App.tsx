@@ -20,7 +20,7 @@ const App = () => {
 
   return (
     <div>
-      <h1>GitHub Commit History</h1>
+      <h1 className='text-teal-600 text-center '>GitHub Commit History</h1>
       <ul>
         {commits.map((commit, index) => (
           <li key={index}>
