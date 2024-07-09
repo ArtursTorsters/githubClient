@@ -3,7 +3,7 @@ import axios from 'axios';
 
 const app = express();
 
-const githubToken = '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'; // Replace with your GitHub access token
+const githubToken = ''; // Replace with your GitHub access token
 
 // Function to fetch all commit history for a single repository
 async function commitHistory(repoName: string): Promise<any[]> {
