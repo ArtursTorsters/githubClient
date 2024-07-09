@@ -1,41 +1,35 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import { fetchCommits } from './api';
 
-const CommitHistory = () => {
-  const [commitHistory, setCommitHistory] = useState([]);
+const App = () => {
+  const [commits, setCommits] = useState<any[]>([]);
 
   useEffect(() => {
-    // Fetch all commit history from backend API
-    axios.get('/api/github/all-commit-history')
-      .then(response => {
-        setCommitHistory(response.data);
-        console.log (response.data);
-      })
-      .catch(error => {
-        console.error('Error fetching all commit history:', error);
-      });
+    const fetchData = async () => {
+      try {
+        const commitsData = await fetchCommits();
+        console.log('Fetched commits:', commitsData);
+        setCommits(commitsData);
+      } catch (error) {
+        console.error('Error fetching commits:', error);
+      }
+    };
+
+    fetchData();
   }, []);
 
   return (
     <div>
-      <h2>GitHub Commit History</h2>
-      <div className="commit-graph">
-        {/* Use a charting library (e.g., chart.js) to render the commit history */}
-        {/* Example: Replace with your chart rendering logic */}
-        {/* <ul>
-          {commitHistory.map(commit => (
-            <li key={commit.sha}>
-              <div>{commit.sha}</div>
-              <div>{commit.message}</div>
-              <div>{commit.author}</div>
-              <div>{commit.date}</div>
-              <div>{commit.repo}</div>
-            </li>
-          ))}
-        </ul> */}
-      </div>
+      <h1>GitHub Commit History</h1>
+      <ul>
+        {commits.map((commit, index) => (
+          <li key={index}>
+            <strong>{commit.repo}</strong> - {commit.message}
+          </li>
+        ))}
+      </ul>
     </div>
   );
 };
 
-export default CommitHistory;
+export default App;
