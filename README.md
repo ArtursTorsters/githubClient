@@ -10,8 +10,8 @@ Clone Repository and Install Dependencies
 
     Clone the Repository:
 
-git clone <repository_url>
-cd <repository_directory>
+    git clone <repository_url>
+    cd <repository_directory>
 
 Install Dependencies:
 
@@ -21,7 +21,7 @@ Compile TypeScript to JavaScript
 
 If you have TypeScript files that need to be compiled to JavaScript:
 
-npx tsc
+    npx tsc
 
 This command compiles TypeScript files in the src directory to JavaScript files in the dist directory.
 
