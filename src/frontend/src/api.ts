@@ -2,7 +2,7 @@ import axios from 'axios';
 
 export const fetchCommits = async () => {
   try {
-    const githubToken = ''
+    const githubToken = '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'
     const response = await axios.get('https://api.github.com/user/repos', {
       headers: {
         Authorization: `Bearer ${githubToken}`,
